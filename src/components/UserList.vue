@@ -1,10 +1,15 @@
 <template>
 <div class="container">
   <div class="row">
-    <div class="col-4" v-for="user in users" :key="user.id">
+    <div class="col-12">
+      <input class="d-flex justify-content-center" id="inputSearch" placeholder="Buscar por nombre" type="text" v-model="search">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" v-for="user in filteredUsers" :key="user.id">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h3 class="card-title">{{ user.username }} {{ user.name }}</h3>
+          <h3 class="card-title">{{ user.name }}</h3>
           <p class="card-text">Ganador@ de la ciudad de <b>{{ user.address.city }}</b></p>
           <a href="#" class="btn btn-primary">+ Info</a>
         </div>
@@ -25,8 +30,14 @@
 
     data() {
       return {
+        search: '',
         users: [],
       };
+    },
+    computed: {
+      filteredUsers(){
+        return this.users.filter(user => user.name.toLowerCase().includes(this.search.toLowerCase()))
+      }
     },
 
     async created() {
@@ -38,5 +49,8 @@
 </script>
 
 <style scoped>
-
+  #inputSearch{
+    border-radius: 25px;
+    margin: 10px;
+  }
 </style>

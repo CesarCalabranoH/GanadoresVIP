@@ -1,8 +1,9 @@
 <template>
   <nav id="headerSection" class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <img src="../../public/favicon.png" alt="iconPerson">
+    <img id="iconPerson" src="/favicon.png" alt="iconPerson">
     <a id="headerSection-name" class="navbar-brand" href="#">Cala.Code</a>
+    <a href="https://github.com/CesarCalabranoH/GanadoresVIP" target="_blank"><img id="iconGithub" src="../assets/github.png" alt="iconGithub"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,10 +26,10 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button id="headerSection-buttonSearch" class="btn btn-outline-success" type="submit">Go</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>
@@ -41,9 +42,13 @@
     padding: 5px;
     color: #d9eeef;
   }
-  img{
+  #iconPerson{
     width: 50px;
     height: 50px;
+  }
+  #iconGithub{
+    width: 30px;
+    height: 30px;
   }
   #headerSection-name{
     color: #d9eeef;
