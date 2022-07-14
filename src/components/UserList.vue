@@ -11,7 +11,25 @@
         <div class="card-body">
           <h3 class="card-title">{{ user.name }}</h3>
           <p class="card-text">Ganador@ de la ciudad de <b>{{ user.address.city }}</b></p>
-          <a href="#" class="btn btn-primary">+ Info</a>
+          <!-- <a href="#" class="btn btn-primary">+ Info</a> -->
+          <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false">
+              + Info
+            </button>
+          </p>
+          <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+              <div class="card card-body" style="width: 16rem;">
+                {{ user.name }}
+                <b>Email:</b>{{ user.email }}
+                <b>Phone:</b>{{ user.phone }}
+                <b>Web:</b>{{ user.website }}
+                <b>Company:</b>{{ user.company.name }}
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </div>
